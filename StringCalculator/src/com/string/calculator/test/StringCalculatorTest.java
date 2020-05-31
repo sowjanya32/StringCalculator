@@ -14,5 +14,12 @@ class StringCalculatorTest {
 		int result = stringCalculator.Add("");
 		assertEquals(0, result);
 	}
+	
+	@Test
+	public void testOneNumber() {
+		StringCalculator stringCalculator = new StringCalculator();
+		int result = stringCalculator.Add("1");
+		assertEquals(1, result);
+	}
 
 }
