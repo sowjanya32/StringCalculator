@@ -17,7 +17,9 @@ public class StringCalculator {
 					negativeCount++;
 					arrayList.add(number);
 				}
-				
+				if(number > 1000) {
+					number = 0;
+				}
 			}
 			sum = sum + number;
 		}
