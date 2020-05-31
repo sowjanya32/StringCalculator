@@ -1,9 +1,12 @@
 package com.string.calculator.main;
 
+import java.util.ArrayList;
+
 public class StringCalculator {
 
 	public int Add(String input)   {
-		int sum = 0, number = 0;
+		int sum = 0, number = 0, negativeCount = 0;
+		ArrayList<Integer> arrayList = new ArrayList<>();
 		if(input.length() < 1)
 			return sum;
 		String[] splitString = input.split("[,\\n//;]+");
@@ -11,10 +14,15 @@ public class StringCalculator {
 			if(str.length() > 0) {
 				number = Integer.parseInt(str);
 				if(number < 0) {
-					throw new IllegalArgumentException("negatives not allowed and the negative number is : " + number);
+					negativeCount++;
+					arrayList.add(number);
 				}
+				
 			}
 			sum = sum + number;
+		}
+		if(negativeCount == arrayList.size() && arrayList.size() > 0) {
+			throw new IllegalArgumentException("negatives not allowed and the negative numbers  : " + arrayList);
 		}
 		return sum;
 	}
