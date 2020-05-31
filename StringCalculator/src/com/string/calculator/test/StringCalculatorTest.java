@@ -4,6 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+
 import com.string.calculator.main.StringCalculator;
 
 class StringCalculatorTest {
@@ -11,7 +12,7 @@ class StringCalculatorTest {
 	StringCalculator stringCalculator = new StringCalculator();
 
 	@Test
-	public void testEmptyString() {
+	public void testEmptyString()  {
 		assertEquals(0, stringCalculator.Add(""));
 	}
 	
@@ -34,5 +35,15 @@ class StringCalculatorTest {
 	public void testDiffDelimiters() {
 		assertEquals(3, stringCalculator.Add("//;\n1;2"));
 	}
-
+	
+	@Test
+	public void testSingleNegativeNumber() {
+		 Exception exception = assertThrows(IllegalArgumentException.class, () ->{
+			stringCalculator.Add("1,-2,3");
+		
+		});
+		String expected = "negatives not allowed and the negative number is : -2";
+		String actual = exception.getMessage();
+		assertEquals(expected, actual);
+	}
 }
