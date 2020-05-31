@@ -21,5 +21,12 @@ class StringCalculatorTest {
 		int result = stringCalculator.Add("1");
 		assertEquals(1, result);
 	}
+	
+	@Test
+	public void testTwoNumber() {
+		StringCalculator stringCalculator = new StringCalculator();
+		int result = stringCalculator.Add("1,5");
+		assertEquals(6, result);
+	}
 
 }
