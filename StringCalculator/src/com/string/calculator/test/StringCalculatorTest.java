@@ -42,7 +42,18 @@ class StringCalculatorTest {
 			stringCalculator.Add("1,-2,3");
 		
 		});
-		String expected = "negatives not allowed and the negative number is : -2";
+		String expected = "negatives not allowed and the negative numbers  : [-2]";;
+		String actual = exception.getMessage();
+		assertEquals(expected, actual);
+	}
+	
+	@Test
+	public void testMultipleNegativeNumber() {
+		 Exception exception = assertThrows(IllegalArgumentException.class, () ->{
+			stringCalculator.Add("-1,-2,-3");
+		
+		});
+		String expected = "negatives not allowed and the negative numbers  : [-1, -2, -3]";
 		String actual = exception.getMessage();
 		assertEquals(expected, actual);
 	}
