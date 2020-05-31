@@ -62,4 +62,14 @@ class StringCalculatorTest {
 	public void testNUmberGreater1000() {
 		assertEquals(2, stringCalculator.Add("2,1001"));
 	}
+	
+	@Test
+	public void testAnyDemilterLength() {
+		assertEquals(6, stringCalculator.Add("//[***]\n1***2***3"));
+	}
+	
+	@Test
+	public void testMultipleDelimiter() {
+		assertEquals(6, stringCalculator.Add("//[*][%]\n1*2%3"));
+	}
 }
