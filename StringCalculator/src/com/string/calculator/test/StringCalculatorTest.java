@@ -57,4 +57,9 @@ class StringCalculatorTest {
 		String actual = exception.getMessage();
 		assertEquals(expected, actual);
 	}
+	
+	@Test
+	public void testNUmberGreater1000() {
+		assertEquals(2, stringCalculator.Add("2,1001"));
+	}
 }
