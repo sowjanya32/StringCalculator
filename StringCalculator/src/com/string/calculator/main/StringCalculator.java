@@ -9,7 +9,7 @@ public class StringCalculator {
 		ArrayList<Integer> arrayList = new ArrayList<>();
 		if(input.length() < 1)
 			return sum;
-		String[] splitString = input.split("[,\\n//;]+");
+		String[] splitString = input.split("[,\\n//;\\[\\]*%]+");
 		for(String str : splitString) {
 			if(str.length() > 0) {
 				number = Integer.parseInt(str);
@@ -17,9 +17,8 @@ public class StringCalculator {
 					negativeCount++;
 					arrayList.add(number);
 				}
-				if(number > 1000) {
+				if(number > 1000)
 					number = 0;
-				}
 			}
 			sum = sum + number;
 		}
