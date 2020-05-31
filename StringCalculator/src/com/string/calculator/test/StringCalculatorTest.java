@@ -24,5 +24,10 @@ class StringCalculatorTest {
 	public void testTwoNumber() {
 		assertEquals(6, stringCalculator.Add("1,5"));
 	}
+	
+	@Test
+	public void testMoreNumbers() {
+		assertEquals(31, stringCalculator.Add("10,5,7,2,3,4"));
+	}
 
 }
