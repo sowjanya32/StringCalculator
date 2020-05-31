@@ -26,8 +26,8 @@ class StringCalculatorTest {
 	}
 	
 	@Test
-	public void testMoreNumbers() {
-		assertEquals(31, stringCalculator.Add("10,5,7,2,3,4"));
+	public void testNewLineInString() {
+		assertEquals(6, stringCalculator.Add("1\n2,3"));
 	}
 
 }
